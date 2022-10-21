@@ -1,19 +1,23 @@
-import React from "react";
+import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
-/* stateless functional component*/
-// always return jsx
-
+// Nested Component, React tool
 function Greeting() {
-    return( 
-      <div>
-       <h1>hello world</h1>
-      </div>)
-    };
-    
-  // Uising arrow fuction to perform similar task
-    const Greeting = () => {
-      return React.createElement(
-        'div', {}, React.createElement('blockqoute', {}, 'Welcome back to grace'));
-    };
+      return( 
+          <div>
+              <Header />
+              < Parahragh />
+              <Time />
+          </div>
+        );
+      };
+
+      // implicit return
+ const Header = () => <h1>Church website will be ready soon</h1>;
+ const Time = () => <input type="text" name="" id="" />
+//  explicit return
+const Parahragh = () => {
+  return <p>Garbage is the word of the wise never look behind</p>;
+}
+
 ReactDOM.render(<Greeting />, document.getElementById("root"));
